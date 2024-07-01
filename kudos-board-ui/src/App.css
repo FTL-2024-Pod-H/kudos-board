@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+footer {
+  padding: 20px;
+  border: 2px solid grey;
+  background-color: #FFB0B0;
+  border-radius: 5px;
+}
+footer {
+  display: block;
+  unicode-bidi: isolate;
+}
