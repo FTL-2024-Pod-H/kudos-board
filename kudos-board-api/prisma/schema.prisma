@@ -27,5 +27,5 @@ model Card {
   gif_url     String
   author      String
   boardId     Int
-  board       Board @relation(fields: [boardId], reference: [id], onDelete: Cascade)
+  board       Board @relation(fields: [boardId], references: [id], onDelete: Cascade)
 }
