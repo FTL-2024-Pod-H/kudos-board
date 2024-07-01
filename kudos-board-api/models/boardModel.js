@@ -12,7 +12,12 @@ const getAllBoards = async (filter = {}, orderBy = {}) => {
 };
 
 const getBoardById = async (id) => {
-  return prisma.Board.findUnique({ where: { id: parseInt(id) } });
+  return prisma.Board.findUnique({
+    where: { id: parseInt(id) },
+    include: {
+      cards: true,
+    },
+  });
 };
 
 const createBoard = async (boardData) => {
