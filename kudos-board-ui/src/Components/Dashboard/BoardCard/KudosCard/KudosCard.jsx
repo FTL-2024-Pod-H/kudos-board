@@ -15,9 +15,8 @@ function KudosCard({cardTitle, cardMessage, gifURL, cardAuthor, onDelete}){
             <p>{cardMessage}</p>
             <img src={gifURL} alt="GIF"/>
             <p>{cardAuthor}</p>
-            <button className="upvote-button" onClick={handleUpvoteClick}>Upvote: {upvoteCount}</button>
-            {/* <button className="delete-button" onClick={onDelete}>Delete</button> */}
-            <button className="delete-button" onClick={onDelete}>
+            <button className="kudos-upvote-button" onClick={handleUpvoteClick}>Upvote: {upvoteCount}</button>
+            <button className="kudos-delete-button" onClick={onDelete}>
           <svg
             stroke="currentColor"
             viewBox="0 0 24 24"

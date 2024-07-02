@@ -3,6 +3,8 @@ import "./Dashboard.css";
 import SearchBar from "../SearchBar/SearchBar";
 import CreateBoard from "../CreateBoard/CreateBoard";
 import Board from "../Board/Board";
+import Header from "../../Header/Header";
+import Footer from "../../Footer/Footer";
 
 
 
@@ -28,24 +30,26 @@ function Dashboard () {
     };
 
     return(
-        <div className="Dashboard">
-            <SearchBar 
-                searchInputValue = {searchInputValue}
-                handleOnSearchInputChange={handleOnSearchInputChange}
-            />
-            <CreateBoard addBoardCard={addBoardCard}/>
+        <>
+            <div className="Dashboard">
+                <SearchBar 
+                    searchInputValue = {searchInputValue}
+                    handleOnSearchInputChange={handleOnSearchInputChange}
+                />
+                <CreateBoard addBoardCard={addBoardCard}/>
 
-            <div className="dashboard-content">
-                {filteredBoardCards.map((card) => (
-                    <Board 
-                        key={card.id} 
-                        card={card} 
-                        onDelete={deleteBoardCard}
-                        onView={viewBoard}
-                    />
-                ))}
+                <div className="dashboard-content">
+                    {filteredBoardCards.map((card) => (
+                        <Board 
+                            key={card.id} 
+                            card={card} 
+                            onDelete={deleteBoardCard}
+                            onView={viewBoard}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

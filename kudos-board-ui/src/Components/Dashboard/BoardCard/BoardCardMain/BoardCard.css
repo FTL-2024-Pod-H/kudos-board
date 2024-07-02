@@ -3,12 +3,12 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center; 
-  
+
 } 
-.create-card-button{
+.create-kudos-card-button{
     margin-bottom: 10px;
     border-radius: 4px;
-    background-color:  #9F8170;
+    background-color:  #6F4E37;
     display: inline-flex;
     align-items: center;
     padding: 0.5rem 1rem;
@@ -21,9 +21,12 @@
     border: none;
     cursor: pointer;
 }
-.create-card-button:hover{
-    background-color: #6F4E37; 
+.create-kudos-card-button:hover{
+    background: linear-gradient(to right, #9F8170, #D5CFAC);
     /* transform: translateY(-0.25rem) scale(1.1);  */
+}
+.kudos-board-title{
+    color:white;
 }
 .cards{
     /* display:flex;

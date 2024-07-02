@@ -4,7 +4,7 @@
    gap: 10px;
     
 }
-.modal {
+.kudos-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -16,7 +16,7 @@
     align-items: center;
     z-index: 1000; /* Ensure modal is on top of other content */
   }
-  .modal-content {
+  .kudos-modal-content {
     background: white;
     padding: 20px;
     border-radius: 5px;
@@ -29,29 +29,21 @@
     flex-direction: column;
 }
 
-.modal-header {
-    display: flex;
-    justify-content: flex-end;
-}
-.close-button {
-    border: none;
-    cursor: pointer;
-}
-.modal-body{
+.kudos-modal-body{
     
     flex:1;
 }
 .search-button, .submit, .copy-gif-url-button {
     margin-top: 10px;
     padding: 8px;
-    background-color: darkgray;
+    background-color: #6F4E37;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 .search-button:hover, .submit:hover, .copy-gif-url-button:hover {
-    background-color: seagreen;
+    background: linear-gradient(to right, #9F8170, #D5CFAC);
 }
  .input-box{
     padding: 10px;
