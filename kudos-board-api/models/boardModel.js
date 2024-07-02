@@ -46,10 +46,6 @@ const deleteBoard = async (id) => {
 };
 
 const addCardToBoard = async (boardId, cardData) => {
-  console.log(boardId);
-  // const board = await prisma.Board.findUnique({
-  //   where: { id: parseInt(boardId) },
-  // });
   return prisma.Card.create({
     data: {
       title: cardData.title,
