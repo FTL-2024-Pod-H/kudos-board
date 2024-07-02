@@ -41,20 +41,17 @@ const createBoard = async (req, res) => {
 };
 
 const updateBoard = async (req, res) => {
-    try {
-    const updateBoard = await boardModel.updateBoard(
-      req.params.id,
-      req.body
-    );
+  try {
+    const updateBoard = await boardModel.updateBoard(req.params.id, req.body);
     if (updateBoard) {
       res.status(200).json(updateBoard);
     } else {
       res.status(404).json({ error: "Board not found" });
     }
-    } catch (error) {
-      res.status(400).json({ error: error.message });
-    }
+  } catch (error) {
+    res.status(400).json({ error: error.message });
   }
+};
 
 const deleteBoard = async (req, res) => {
   try {
@@ -64,24 +61,32 @@ const deleteBoard = async (req, res) => {
     } else {
       res.status(404).json({ error: "Board not found" });
     }
-  } catch (error){
-    res.status(400).json({ error : error.message})
+  } catch (error) {
+    res.status(400).json({ error: error.message });
   }
-}
+};
 
 const addCardToBoard = async (req, res) => {
   try {
-    const addedCard = await boardModel.addCardToBoard(req.param.id, req.body);
+    const addedCard = await boardModel.addCardToBoard(req.params.id, req.body);
     if (addedCard) {
-      res.status(200).json(addedCard)
+      res.status(200).json(addedCard);
     } else {
-      res.status(404).json({error : "Can not add card to board"})
+      res.status(404).json({ error: "Can not add card to board" });
     }
   } catch (error) {
-    res.status(400).json({error: error.message })
-
+    res.status(400).json({ error: error.message });
   }
-}
+};
+
+const getCards = async (req, res) => {
+  try {
+    const cards = await boardModel.getCards(req.params.id);
+    res.status(200).json(cards);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 
 module.exports = {
   getAllBoards,
@@ -89,5 +94,6 @@ module.exports = {
   createBoard,
   updateBoard,
   deleteBoard,
-  addCardToBoard
+  addCardToBoard,
+  getCards,
 };
