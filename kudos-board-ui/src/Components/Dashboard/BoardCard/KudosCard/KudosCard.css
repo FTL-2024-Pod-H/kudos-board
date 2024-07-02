@@ -6,9 +6,9 @@
     padding: 15px;
     position: relative;
     text-align: center;
+    color: white;
 }
-.delete-button, .upvote-button {
-   
+.kudos-delete-button, .kudos-upvote-button {
     position: absolute;
     display: inline-flex;
     align-items: center;
@@ -23,32 +23,28 @@
     cursor: pointer;
 }
 
-.delete-button {
+.kudos-delete-button {
     bottom: 10px;
     right: 10px;
     background-color: #A52A2A; 
-    
 }
 
-.upvote-button {
+.kudos-upvote-button {
     bottom: 10px;
     left: 10px;  
-    background-color:  #9F8170;
-    
+    background-color:  #6F4E37;
 }
 
-
-.delete-button:hover {
+.kudos-delete-button:hover {
     background-color: #cc1f1a; 
-    /* transform: translateY(-0.25rem) scale(1.1);  */
 }
 
-.upvote-button:hover{
-    background-color: #6F4E37; 
-    /* transform: translateY(-0.25rem) scale(1.1);  */
+.kudos-upvote-button:hover{
+    /* background-color: #6F4E37;  */
+    background: linear-gradient(to right, #9F8170, #D5CFAC);
 }
 
-.delete-button svg {
+.kudos-delete-button svg {
     height: 1.1rem; 
     width: 1.25rem; 
     margin-right: 0.5rem;

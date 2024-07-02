@@ -5,9 +5,6 @@ import KudosCard from "../KudosCard/KudosCard";
 
 function CreateCard({onClose, onAddCard}){
 
-    // const createKudosCard = () => {
-    //     // <KudosCard cardTitle={...} cardMessage={...} gifURL={...} cardAurthor{...} />
-    // }
     const [cardTitle, setCardTitle] = useState("");
     const [cardMessage, setCardMessage] = useState("");
     const [gifURL, setGifURL] = useState("");
@@ -16,21 +13,17 @@ function CreateCard({onClose, onAddCard}){
     const handleSubmit = (e) => {
         e.preventDefault();
         onAddCard({ cardTitle, cardMessage, gifURL, cardAuthor });
-        onClose(); // Close the modal after creating the card
+        onClose(); 
     };
     
     return(
 
 
         <>
-            {/* <h2>test</h2> */}
-            <div className="modal" onClick={onClose}>
-                <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                    {/* <div className="modal-header">
-                        <button className="close-button" onClick={onClose}>X</button>
-                    </div> */}
+            <div className="kudos-modal" onClick={onClose}>
+                <div className="kudos-modal-content" onClick={(e) => e.stopPropagation()}>
                     <h2> Create a New Card</h2>
-                    <div className="modal-body">
+                    <div className="kudos-modal-body">
                         <form className="new-card-form" onSubmit={handleSubmit}>
                             <input className="input-box" type="text" placeholder="Enter card title" value={cardTitle} onChange={(e) => setCardTitle(e.target.value)} />
                             <input className="input-box" type="text" placeholder="Enter card description" value={cardMessage} onChange={(e) => setCardMessage(e.target.value)} />

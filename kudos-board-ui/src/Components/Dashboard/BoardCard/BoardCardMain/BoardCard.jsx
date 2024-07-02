@@ -26,13 +26,8 @@ function BoardCard({boardTitle, onClick}){
 
     return(
     <>
-        {/* <Link to="/">
-        <button className="back-button">Back to Home</button>
-      </Link> */}
-        <h1> Name of Bord</h1>
-        {/* <h2>{boardTitle}</h2> */}
-        <button className="create-card-button" onClick={handleCreateCardClick} > Create a Card</button>
-        {/* {showCreateCard && <CreateCard onClose={handleCloseCreateCard} onAddCard={handleAddCard}/>} */}
+        <h1 className="kudos-board-title"> Name of Board</h1>
+        <button className="create-kudos-card-button" onClick={handleCreateCardClick} > Create a Card</button>
         
         {showCreateCard && (
             <div className="card-form">
@@ -57,8 +52,6 @@ function BoardCard({boardTitle, onClick}){
             cardTitle="Test Card"
             cardMessage="creating a test Card"
             gifURL="..." /> */}
-            
-            
     </>
     )
 };
