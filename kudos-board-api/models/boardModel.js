@@ -31,38 +31,43 @@ const createBoard = async (boardData) => {
 
 const updateBoard = async (id, boardData) => {
   return prisma.Board.update({
-    where : {id: parseInt(id) },
-    data : boardData, 
-    include : {cards: true}
-  })
-}
+    where: { id: parseInt(id) },
+    data: boardData,
+    include: { cards: true },
+  });
+};
 
-//Function to delete a order
+//Function to delete a board
 const deleteBoard = async (id) => {
-  return prisma.Board.delete({ where: { id: parseInt(id) }, include: {cards: true} });
+  return prisma.Board.delete({
+    where: { id: parseInt(id) },
+    include: { cards: true },
+  });
 };
 
 const addCardToBoard = async (boardId, cardData) => {
-  const card = await prisma.card.findUnique({
-    where : { card_id: parseInt (cardData.boardId)}, 
+  console.log(boardId);
+  // const board = await prisma.Board.findUnique({
+  //   where: { id: parseInt(boardId) },
+  // });
+  return prisma.Card.create({
+    data: {
+      title: cardData.title,
+      message: cardData.message,
+      gif_url: cardData.gif_url,
+      author: cardData.author,
+      boardId: parseInt(boardId),
+    },
   });
-  return prisma.card.create ({
-    data : {
-      title : cardData.title,
-      message : cardData.message,
-      gif_url : cardData.gif_url,
-      author : cardData.author,
-      boardId : parseInt(boardId)
-    }
-  }) 
+};
 
+const getCards = async (id) => {
+  return prisma.Card.findMany({
+    where: { boardId: parseInt(id) },
+  });
+};
 
-
-
-
-}
-
-// updateBoard, deleteBoard, addCardtoBoard, 
+// updateBoard, deleteBoard, addCardtoBoard,
 
 module.exports = {
   getAllBoards,
@@ -70,5 +75,6 @@ module.exports = {
   createBoard,
   updateBoard,
   deleteBoard,
-  addCardToBoard
+  addCardToBoard,
+  getCards,
 };
