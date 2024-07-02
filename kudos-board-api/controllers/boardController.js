@@ -40,8 +40,54 @@ const createBoard = async (req, res) => {
   }
 };
 
+const updateBoard = async (req, res) => {
+    try {
+    const updateBoard = await boardModel.updateBoard(
+      req.params.id,
+      req.body
+    );
+    if (updateBoard) {
+      res.status(200).json(updateBoard);
+    } else {
+      res.status(404).json({ error: "Board not found" });
+    }
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  }
+
+const deleteBoard = async (req, res) => {
+  try {
+    const deletedBoard = await boardModel.deleteBoard(req.params.id);
+    if (deletedBoard) {
+      res.status(200).json(deletedBoard);
+    } else {
+      res.status(404).json({ error: "Board not found" });
+    }
+  } catch (error){
+    res.status(400).json({ error : error.message})
+  }
+}
+
+const addCardToBoard = async (req, res) => {
+  try {
+    const addedCard = await boardModel.addCardToBoard(req.param.id, req.body);
+    if (addedCard) {
+      res.status(200).json(addedCard)
+    } else {
+      res.status(404).json({error : "Can not add card to board"})
+    }
+  } catch (error) {
+    res.status(400).json({error: error.message })
+
+  }
+}
+
 module.exports = {
   getAllBoards,
   getBoardById,
   createBoard,
+  updateBoard,
+  deleteBoard,
+  addCardToBoard
 };

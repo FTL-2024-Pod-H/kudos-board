@@ -8,5 +8,11 @@ router.get("/", boardController.getAllBoards);
 router.get("/:id", boardController.getBoardById);
 // make a board
 router.post("/", boardController.createBoard);
+// update a board
+router.put("/:id", boardController.updateBoard)
+// delete board
+router.delete("/:id", boardController.deleteBoard)
+// adding card to board
+router.post("/:id/cards", boardController.addCardToBoard)
 
 module.exports = router;
