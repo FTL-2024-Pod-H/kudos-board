@@ -2,6 +2,8 @@
 
 import React from "react";
 import "./Board.css";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+// import BoardCard from '../BoardCard/BoardCardMain/BoardCard';
 
 const Board = ({card, onDelete, onView}) => {
     
@@ -14,22 +16,22 @@ const Board = ({card, onDelete, onView}) => {
         onView(card);
     };
     return (
-        <div className="board-card">
-            <img src={card.imageUrl} alt={card.title}/>
-            <div>
-                <h3>{card.title}</h3>
-                <p>{card.category}</p>
-                <p>By: {card.author}</p>
-                <div className="button-container">
-                    <button onClick={handleDelete} className="delete-button">
-                        Delete
-                    </button>
-                    <button onClick={handleView} className="view-button">
-                        View Board
-                    </button>
+            <div className="board-card">
+                <img src={card.imageUrl} alt={card.title}/>
+                <div>
+                    <h3>{card.title}</h3>
+                    <p>{card.category}</p>
+                    <p>By: {card.author}</p>
+                    <div className="button-container">
+                        <button onClick={handleDelete} className="delete-button">
+                            Delete
+                        </button>
+                            <button onClick={handleView} className="view-button">
+                                View Board
+                            </button>
+                    </div>
                 </div>
             </div>
-        </div>
     );
 };
 

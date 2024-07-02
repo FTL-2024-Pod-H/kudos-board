@@ -10,7 +10,7 @@ function BoardCard({boardTitle, onClick}){
 
     const handleCreateCardClick = () => {
         setShowCreateCard(true);
-      };
+    };
 
     const handleCloseCreateCard = () => {
         setShowCreateCard(false);
@@ -22,7 +22,7 @@ function BoardCard({boardTitle, onClick}){
 
     const handleDeleteCard = (index) => {
         setCards(cards.filter((_, cardIndex) => cardIndex !== index));
-      };
+    };
 
     return(
     <>
