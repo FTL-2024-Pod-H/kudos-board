@@ -1,0 +1,87 @@
+.board-card {
+    flex: 0 1 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 100px rgba(50, 205, 50, 0.4);
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.board-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.board-card img {
+    width: 98%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.board-card h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.board-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    width: 100%;
+    gap: 10px;
+}
+
+.delete-button,
+.view-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.delete-button {
+    background-color: #ff6347; 
+    color: white;
+}
+
+.view-button {
+    background-color: #32cd32; 
+    color: white;
+}
+
+.delete-button:hover,
+.view-button:hover {
+    background-color: #dc143c; 
+}
+
+.view-button:hover {
+    background-color: #228b22; 
+}
+
+@media (max-width: 768px) {
+    .board-card {
+        flex: 0 1 calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 480px) {
+    .board-card {
+        flex: 0 1 100%;
+    }
+}
