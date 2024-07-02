@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import BoardCard from './Components/Dashboard/BoardCard/BoardCardMain/BoardCard';
-import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+// import BoardCard from './Components/Dashboard/BoardCard/BoardCardMain/BoardCard';
+import React, { useState } from 'react'
+import './App.css'
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import Dashboard from './Components/Dashboard/DashboardMain/Dashboard';
 
+
+const App = () => {
   return (
-    <>
-      <BoardCard/>
-      
-
-      
-    </>
-  )
+     // <BoardCard/>
+    <div className="App"> 
+      <Header/>
+      <main>
+        <Dashboard/>
+      </main>
+      <Footer/>
+    </div>)
 }
 
 export default App
