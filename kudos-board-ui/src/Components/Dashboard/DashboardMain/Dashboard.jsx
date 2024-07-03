@@ -4,10 +4,10 @@ import axios from "axios";
 import SearchBar from "../SearchBar/SearchBar";
 import CreateBoard from "../CreateBoard/CreateBoard";
 import Board from "../Board/Board";
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
+// import Header from "../../Header/Header";
+// import Footer from "../../Footer/Footer";
 import Sorting from "../Sorting/Sorting";
-import {Link} from "react-router-dom"
+// import {Link} from "react-router-dom"
 
 
 
@@ -25,7 +25,7 @@ function Dashboard () {
     };
 
     const filteredBoardCards = boardCards.filter(card => {
-        const matchesSearch = card.title.toLowerCase().includes(searchInputValue.toLowerCase());
+        const matchesSearch = card.name.toLowerCase().includes(searchInputValue.toLowerCase());
         const matchesCategory = selectedCategory == "All" || card.category === selectedCategory;
         return matchesSearch && matchesCategory;
     });
@@ -40,9 +40,9 @@ function Dashboard () {
                 console.error("There was an error deleting the board!", error);
             });
     };
-    const viewBoard = (selectedCard) => {
-        console.log("View Board:", selectedCard);
-    };
+    // const viewBoard = (selectedCard) => {
+    //     console.log("View Board:", selectedCard);
+    // };
 
     const handleCateoryChange = (category) => {
         setSelectedCategory(category);
@@ -70,19 +70,19 @@ function Dashboard () {
 
                 <div className="dashboard-content">
                     {filteredBoardCards.map((card) => (
-                        <Link to={`/board-card/${card.id}`} key={card.id}>
+                        // <Link to={`/board-card/${card.id}`} key={card.id}>
                             <Board 
                                 key={card.id} 
                                 card={card} 
                                 onDelete={deleteBoardCard}
-                                onView={viewBoard}
+                                // onView={viewBoard}
                             />
-                        </Link>
+                        // </Link>
                     ))}
                 </div>
             </div>
         </>
     );
-};
+}
 
 export default Dashboard;

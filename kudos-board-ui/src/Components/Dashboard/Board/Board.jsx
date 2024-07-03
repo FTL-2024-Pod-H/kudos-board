@@ -5,16 +5,19 @@ import "./Board.css";
 import { Link } from 'react-router-dom';
 import BoardCard from "../BoardCard/BoardCardMain/BoardCard";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-const Board = ({card, onDelete, onView}) => {
+const Board = ({card, onDelete}) => {
+    const navigate = useNavigate();
     
     const handleDelete= () => {
         console.log(card.id);
         onDelete(card.id);
     };
+    // const imageUrl = card.imageUrl;
 
     const handleView = () => {
-        onView(card);
+        navigate(`/board-card/${card.id}`);
     };
     return (
         // <BrowserRouter>
@@ -22,11 +25,11 @@ const Board = ({card, onDelete, onView}) => {
         //         <Route path="/board-card" element={<BoardCard card={card} />} />
         //     </Routes>
             <div className="board-card">
-                <img src={card.imageUrl} alt={card.title}/>
+                <img src= {`https://picsum.photos/200/300?random=${Math.floor(Math.random() * 1000)}`} alt={card.name}/>
                 <div>
-                    <h3>{card.title}</h3>
+                    <h3>{card.name}</h3>
                     <p>{card.category}</p>
-                    <p>By: {card.author}</p>
+                    {/* <p>By: {card.author}</p> */}
                     <div className="button-container">
                         <button onClick={handleDelete} className="delete-button">
                         <svg
@@ -44,12 +47,11 @@ const Board = ({card, onDelete, onView}) => {
                         </svg>
                             Delete
                         </button>
-                        <Link to="/board-card" className="view-button-link">
+                        {/* <Link to="/board-card" className="view-button-link"> */}
                             <button onClick={handleView} className="view-button">
-                                
                                 View Board
                             </button>
-                        </Link>
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>

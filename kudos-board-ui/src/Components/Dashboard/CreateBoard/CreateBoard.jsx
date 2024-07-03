@@ -1,13 +1,17 @@
 /**Manages modal overlay for creating a new board card**/
 import React, {useState} from "react";
 import "./CreateBoard.css";
+import axios from "axios";
+// import { useNavigate } from "react-router-dom";
 
 const CreateBoard = ({addBoardCard}) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [title, setTitle] = useState('');
+    const [name, setName] = useState('');
     const [category, setCategory] = useState('Recent');
-    const [author, setAuthor] = useState('');
-    
+    // const [author, setAuthor] = useState('');
+
+    // const navigate = useNavigate();
+
     const handleOpenModal = () => {
         console.log("Opening modal");
         setIsOpen(true);
@@ -20,22 +24,23 @@ const CreateBoard = ({addBoardCard}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("Form submitted");
-        const randomImageUrl = `https://picsum.photos/200/300?random=${Math.floor(Math.random() * 1000)}`;
+        // const randomImageUrl = `https://picsum.photos/200/300?random=${Math.floor(Math.random() * 1000)}`;
+        // const randomImageUrl = `https://picsum.photos/200/300`;
 
         const newBoardCard = {
             // id: Math.random().toString(36).substr(2, 9),
-            title: title,
+            name: name,
             category: category,
-            author: author,
-            imageUrl: randomImageUrl,
+            // author: author,
+            // imageUrl: randomImageUrl,
         };
 
         axios.post("http://localhost:3000/boards", newBoardCard)
             .then(response => {
                 addBoardCard(response.data);
-                setTitle('');
+                setName('');
                 setCategory('Recent');
-                setAuthor('');
+                // setAuthor('');
                 setIsOpen(false);   
             })
             .catch(error => {
@@ -55,8 +60,8 @@ const CreateBoard = ({addBoardCard}) => {
                                 Title: 
                                 <input
                                     type="text"
-                                    value={title}
-                                    onChange={(e) => setTitle(e.target.value)}
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
                                     required
                                 />
                             </label>
@@ -72,7 +77,7 @@ const CreateBoard = ({addBoardCard}) => {
                                     <option value="Inspiration">Inspiration</option>
                                 </select>
                             </label>
-                            <label>
+                            {/* <label>
                                 Author:
                                 <input
                                     type="text"
@@ -80,7 +85,7 @@ const CreateBoard = ({addBoardCard}) => {
                                     onChange={(e) => setAuthor(e.target.value)}
                                     required
                                 />
-                            </label>
+                            </label> */}
                             <button type="submit">Create</button>
                             <button onClick={handleCloseModal}>Cancel</button>
                         </form>
