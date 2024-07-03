@@ -39,7 +39,7 @@ const deleteCard = async (id) => {
 module.exports = {
   getAllCards,
   getCardById,
-  createCard,
+  // createCard,
   updateCard,
   deleteCard,
 };
