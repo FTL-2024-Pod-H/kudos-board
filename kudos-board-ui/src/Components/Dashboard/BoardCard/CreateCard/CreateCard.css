@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Ensure modal is on top of other content */
+    z-index: 1000; 
   }
   .kudos-modal-content {
     background: white;

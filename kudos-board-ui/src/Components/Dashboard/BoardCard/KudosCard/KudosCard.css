@@ -22,6 +22,24 @@
     border: none;
     cursor: pointer;
 }
+.show-comments-button {
+    bottom: 10px; 
+    left: 10px;
+    background-color:  #6F4E37;
+
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    
+    transition: all 0.75s ease-in-out;
+    color: white;
+    font-size: 0.875rem; 
+    font-weight: 500;
+    border-radius: 0.375rem; 
+    border: none;
+    cursor: pointer;
+}
 
 .kudos-delete-button {
     bottom: 10px;
@@ -30,7 +48,7 @@
 }
 
 .kudos-upvote-button {
-    bottom: 10px;
+    bottom: 50px;
     left: 10px;  
     background-color:  #6F4E37;
 }
@@ -43,13 +61,13 @@
     /* background-color: #6F4E37;  */
     background: linear-gradient(to right, #9F8170, #D5CFAC);
 }
+.show-comments-button:hover{
+    background: linear-gradient(to right, #9F8170, #D5CFAC);
+}
 
 .kudos-delete-button svg {
     height: 1.1rem; 
     width: 1.25rem; 
     margin-right: 0.5rem;
 }
-
-
-
   
