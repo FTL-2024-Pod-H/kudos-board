@@ -1,11 +1,24 @@
 import React, { useState } from "react";
 import "../KudosCard/KudosCard.css";
+import CommentModal from "../../CommentModal/CommentModal";
 
 function KudosCard({cardTitle, cardMessage, gifURL, cardAuthor, onDelete}){
     const [upvoteCount, setUpvoteCount] = useState(0);
+    const [comments, setComments] = useState([]);
+    const [showComments, setShowComments] = useState(false);
 
     const handleUpvoteClick = () => {
         setUpvoteCount(upvoteCount + 1);
+    };
+
+    const handleAddComment = (comment) => {
+        setComments([...comments, comment]);
+    };
+    const handleShowComments = () => {
+        setShowComments(true);
+
+    const handleCloseComments = () => {
+        setShowComments(false);
     };
 
     return(
@@ -32,7 +45,15 @@ function KudosCard({cardTitle, cardMessage, gifURL, cardAuthor, onDelete}){
           </svg>
           Delete
         </button>
+        <button className="show-comments-button" onClick={handleShowComments}>Show Comments</button>
         </div>
+        {showComments && (
+                <CommentModal 
+                    onClose={handleCloseComments} 
+                    comments={comments} 
+                    addComment={handleAddComment} 
+                />
+        )}
     </>
     )
 };
