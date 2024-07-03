@@ -25,8 +25,8 @@ function CreateCard({onClose, onAddCard}){
                     <h2> Create a New Card</h2>
                     <div className="kudos-modal-body">
                         <form className="new-card-form" onSubmit={handleSubmit}>
-                            <input className="input-box" type="text" placeholder="Enter card title" value={cardTitle} onChange={(e) => setCardTitle(e.target.value)} />
-                            <input className="input-box" type="text" placeholder="Enter card description" value={cardMessage} onChange={(e) => setCardMessage(e.target.value)} />
+                            <input className="input-box" type="text" placeholder="Enter card title" value={cardTitle} onChange={(e) => setCardTitle(e.target.value)} required/>
+                            <input className="input-box" type="text" placeholder="Enter card description" value={cardMessage} onChange={(e) => setCardMessage(e.target.value)} required/>
                             <input className="input-box" type="text" placeholder="Search GIFs..." value={gifURL} onChange={(e) => setGifURL(e.target.value)} />
 
                             <button className="search-button" type="button">Search</button>
