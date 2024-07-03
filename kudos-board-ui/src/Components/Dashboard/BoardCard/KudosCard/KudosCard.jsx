@@ -24,30 +24,47 @@ function KudosCard({cardTitle, cardMessage, gifURL, cardAuthor, onDelete}){
 
     return(
     <>
-        <div className="kudosCard">
-            <h1>{cardTitle}</h1>
-            <p>{cardMessage}</p>
-            <img src={gifURL} alt="GIF"/>
-            <p>{cardAuthor}</p>
-            <button className="kudos-upvote-button" onClick={handleUpvoteClick}>Upvote: {upvoteCount}</button>
-            <button className="kudos-delete-button" onClick={onDelete}>
-          <svg
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-              strokeWidth="2"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-            ></path>
-          </svg>
-          Delete
-        </button>
-        <button className="show-comments-button" onClick={handleShowComments}>Show Comments</button>
+    <div className="kudosCard">
+        <div className="card-details">
+          <h1>{cardTitle}</h1>
+          <p>{cardMessage}</p>
+          <div className="gif-container">
+            <img src={gifURL} alt="GIF" />
+          </div>
+          <p className="card-author">{cardAuthor}</p>
         </div>
+        <div className="card-actions">
+          <div className="left-buttons">
+            <button className="kudos-upvote-button" onClick={handleUpvoteClick}>
+              Upvote: {upvoteCount}
+            </button>
+            <button
+              className="show-comments-button"
+              onClick={handleShowComments}
+            >
+              Show Comments
+            </button>
+          </div>
+          <div className="right-button">
+            <button className="kudos-delete-button" onClick={onDelete}>
+              <svg
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  strokeWidth="2"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                ></path>
+              </svg>
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
         {showComments && (
                 <CommentModal 
                     onClose={handleCloseComments} 
