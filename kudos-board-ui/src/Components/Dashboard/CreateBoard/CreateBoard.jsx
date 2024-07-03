@@ -23,19 +23,24 @@ const CreateBoard = ({addBoardCard}) => {
         const randomImageUrl = `https://picsum.photos/200/300?random=${Math.floor(Math.random() * 1000)}`;
 
         const newBoardCard = {
-            id: Math.random().toString(36).substr(2, 9),
+            // id: Math.random().toString(36).substr(2, 9),
             title: title,
             category: category,
             author: author,
             imageUrl: randomImageUrl,
         };
 
-        addBoardCard(newBoardCard);
-        
-        setTitle('');
-        setCategory('Recent');
-        setAuthor('');
-        setIsOpen(false);
+        axios.post("http://localhost:3000/boards", newBoardCard)
+            .then(response => {
+                addBoardCard(response.data);
+                setTitle('');
+                setCategory('Recent');
+                setAuthor('');
+                setIsOpen(false);   
+            })
+            .catch(error => {
+                console.error("There was an error creating the board!", error);
+            })
     };
 
     return (

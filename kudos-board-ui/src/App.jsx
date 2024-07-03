@@ -10,23 +10,13 @@ import Dashboard from './Components/Dashboard/DashboardMain/Dashboard';
 
 const App = () => {
   return (
-     // <BoardCard/>
-     <>
-     <Header/>
-     <BrowserRouter>
-
+    <>
+    <Header/>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dashboard/>} />
-        <Route path="/board-card" element={<BoardCard  />} />
+        <Route path="/board-card/:boardId" element={<BoardCard  />} />
       </Routes>
-
-      {/* <div className="App"> 
-        
-        <main>
-          <Dashboard/>
-        </main>
-        
-      </div> */}
     </BrowserRouter>
     <Footer/>
     </>
