@@ -57,6 +57,7 @@ function CreateCard({ onClose, onAddCard }) {
                 placeholder="Enter card title"
                 value={cardTitle}
                 onChange={(e) => setCardTitle(e.target.value)}
+                required
               />
               <input
                 className="input-box"
@@ -64,6 +65,7 @@ function CreateCard({ onClose, onAddCard }) {
                 placeholder="Enter card description"
                 value={cardMessage}
                 onChange={(e) => setCardMessage(e.target.value)}
+                required
               />
               <input
                 className="input-box"
@@ -93,6 +95,7 @@ function CreateCard({ onClose, onAddCard }) {
               >
                 Search
               </button>
+
 
               <input
                 className="input-box"

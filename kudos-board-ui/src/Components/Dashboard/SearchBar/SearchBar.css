@@ -35,6 +35,7 @@
 }
 
 .search-bar .search-icon:hover {
-    background: linear-gradient(to right, #006400, #32CD32);
+    background: linear-gradient(to right, #6F4E37, #9F8170);
+    
     color: white;
 }

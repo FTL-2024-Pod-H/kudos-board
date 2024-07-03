@@ -28,5 +28,11 @@ model Card {
   author      String
   boardId     Int
 
-  Board       Board @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  board       Board @relation(fields: [boardId], references: [id], onDelete: Cascade)
+}
+
+model User{
+  id        Int @id @default(autoincrement())
+  username  String  @unique
+  password  String
 }
