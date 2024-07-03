@@ -11,17 +11,17 @@ const getCardById = async (id) => {
   });
 };
 
-const createCard = async (cardData) => {
-  return prisma.Card.create({
-    data: {
-      title: cardData.title,
-      message: cardData.message,
-      gif_url: cardData.gif_url,
-      author: cardData.author,
-      boardId: parseInt(cardData.boardId),
-    },
-  });
-};
+// const createCard = async (cardData) => {
+//   return prisma.Card.create({
+//     data: {
+//       title: cardData.title,
+//       message: cardData.message,
+//       gif_url: cardData.gif_url,
+//       author: cardData.author,
+//       boardId: parseInt(cardData.boardId),
+//     },
+//   });
+// };
 
 const updateCard = async (id, cardData) => {
   return prisma.Card.update({
