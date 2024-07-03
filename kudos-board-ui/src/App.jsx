@@ -39,17 +39,17 @@ const App = () => {
         <Route path="/board-card" element={<BoardCard />} />
       </Routes>
 
-      {/* <div className="App"> 
+        {/* <div className="App"> 
         
         <main>
           <Dashboard/>
         </main>
         
       </div> */}
-    </BrowserRouter>
-    <Footer/>
+      </BrowserRouter>
+      <Footer />
     </>
-    )
-}
+  );
+};
 
-export default App
+export default App;
