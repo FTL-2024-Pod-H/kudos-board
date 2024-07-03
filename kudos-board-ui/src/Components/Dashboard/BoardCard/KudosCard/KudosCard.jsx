@@ -16,6 +16,7 @@ function KudosCard({cardTitle, cardMessage, gifURL, cardAuthor, onDelete}){
     };
     const handleShowComments = () => {
         setShowComments(true);
+    };
 
     const handleCloseComments = () => {
         setShowComments(false);
