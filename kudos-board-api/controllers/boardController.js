@@ -42,9 +42,9 @@ const createBoard = async (req, res) => {
 
 const updateBoard = async (req, res) => {
   try {
-    const updateBoard = await boardModel.updateBoard(req.params.id, req.body);
-    if (updateBoard) {
-      res.status(200).json(updateBoard);
+    const updatedBoard = await boardModel.updateBoard(req.params.id, req.body);
+    if (updatedBoard) {
+      res.status(200).json(updatedBoard);
     } else {
       res.status(404).json({ error: "Board not found" });
     }
@@ -69,13 +69,10 @@ const deleteBoard = async (req, res) => {
 const addCardToBoard = async (req, res) => {
   try {
     const addedCard = await boardModel.addCardToBoard(req.params.id, req.body);
-    if (addedCard) {
-      res.status(200).json(addedCard);
-    } else {
-      res.status(404).json({ error: "Can not add card to board" });
-    }
+    res.status(201).json(addedCard);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.error("Error adding card to board:", error);
+    res.status(400).json({ error: "Failed to add card to board" });
   }
 };
 

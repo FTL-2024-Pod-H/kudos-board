@@ -27,6 +27,7 @@ const App = () => {
   };
 
   return (
+
      // <BoardCard/>
      <>
      <BrowserRouter>
@@ -36,7 +37,7 @@ const App = () => {
         <Route path="/" element={<Dashboard/>} />
         <Route path="/register" element={<Register setIsAuthenticated={setIsAuthenticated} />} />
         <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />}/>
-        <Route path="/board-card" element={<BoardCard />} />
+        <Route path="/board-card/:boardId" element={<BoardCard  />} />
       </Routes>
 
         {/* <div className="App"> 

@@ -12,11 +12,13 @@ function CreateCard({ onClose, onAddCard }) {
   const [gifs, setGifs] = useState([]);
   const [clickedGifId, setClickedGifId] = useState(null);
 
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
     e.preventDefault();
-    onAddCard({ cardTitle, cardMessage, gifURL, searchGif, cardAuthor });
+    const newCard = { title: cardTitle, message: cardMessage, gif_url: gifURL, author: cardAuthor };
+    onAddCard(newCard);
     onClose();
-  };
+};
+
 
   const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -127,3 +129,4 @@ function CreateCard({ onClose, onAddCard }) {
 }
 
 export default CreateCard;
+

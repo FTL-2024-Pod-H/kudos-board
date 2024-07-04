@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const boardController = require("../controllers/boardController");
 
-//get all boards
+// get all boards
 router.get("/", boardController.getAllBoards);
 // get a board by its ID
 router.get("/:id", boardController.getBoardById);
@@ -16,4 +16,5 @@ router.delete("/:id", boardController.deleteBoard);
 router.post("/:id/cards", boardController.addCardToBoard);
 // get cards from specific board
 router.get("/:id/cards", boardController.getCards);
+
 module.exports = router;
