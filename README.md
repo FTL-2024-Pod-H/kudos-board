@@ -57,6 +57,15 @@ Deployed Application: [Kudos Board Deployed Site](https://kudos-board-1-0yv4.onr
     </a>
   </div>
 
+  <div>
+    <a href="https://www.loom.com/share/44497e243f084bff879f5edf4499adc6">
+      <p>Kudo Board Updated Login - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/44497e243f084bff879f5edf4499adc6">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/44497e243f084bff879f5edf4499adc6-with-play.gif">
+    </a>
+  </div>
+
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
