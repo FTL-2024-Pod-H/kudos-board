@@ -2,7 +2,7 @@
 
 Submitted by: **FTL Pod H: Kiahna Isadore, Hanna Abrahem, Lucky Beulla Muhoza, Samuel Rebuelta-Sanchez**
 
-Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
+Deployed Application: [Kudos Board Deployed Site](https://kudos-board-1-0yv4.onrender.com/)
 
 ### Application Features
 
@@ -61,20 +61,22 @@ Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes! We used the flixter and student store projects as references for this full-stack project. There was nothing we unprepared to complete.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If we had more time, we would store comments and upvotes of each card to our database, as well as adding a filter option on the dashboard so that only the current user's boards are displayed.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+Our presentation did not go as planned. For the future we plan on creating a slideshow to display our projects, as well as using one computer to highlight our project's features. We also plan on taking the last hour before our demo to not touch any code and only spend that hour practicing our presentation.
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- None
 
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+**Shout outt to ALL instructors! Thank you to Devarsh, Alex, Keith, and ERIKA!**
