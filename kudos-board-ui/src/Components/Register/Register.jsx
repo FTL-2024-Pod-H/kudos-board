@@ -24,12 +24,12 @@ const Register = ({ setIsAuthenticated }) => {
     try {
       //register the user
       const response = await axios.post(
-        "http://localhost:3000/users/register",
+        "https://kudos-board-yc73.onrender.com/users/register",
         { username, password }
       );
       //login the user
       const loginResponse = await axios.post(
-        "http://localhost:3000/users/login",
+        "https://kudos-board-yc73.onrender.com/users/login",
         { username, password }
       );
 
@@ -66,7 +66,7 @@ const Register = ({ setIsAuthenticated }) => {
     />
     <input
       className="register-form"
-      type="text"
+      type="password"
       placeholder="Confirm Password"
       onChange={(e) => setConfirmPassword(e.target.value)}
       required
