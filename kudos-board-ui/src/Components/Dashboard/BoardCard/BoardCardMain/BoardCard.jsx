@@ -22,6 +22,7 @@ function BoardCard(){
     const handleAddCard = (newCard) => {
         axios.post(`http://localhost:3000/boards/${boardId}/cards`, newCard)
             .then(response => {
+                console.log(response.data);
                 setCards([...cards, response.data]);
             })
             .catch(error => {
@@ -74,10 +75,10 @@ function BoardCard(){
         {cards.map((card, index) => (
                 <KudosCard
                     key={index}
-                    cardTitle={card.cardTitle}
-                    cardMessage={card.cardMessage}
-                    gifURL={card.gifURL}
-                    cardAuthor={card.cardAuthor}
+                    cardTitle={card.title}
+                    cardMessage={card.message}
+                    gifURL={card.gif_url}
+                    cardAuthor={card.author}
                     onDelete={()=> handleDeleteCard(card.card_id)}
                 />
             ))}
