@@ -35,7 +35,7 @@ Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
 
 - [X] **User Accounts**
   - [X] Users should be able to log in with a username and password.
-  - [ ] Users should be able to sign up for a new account.
+  - [X] Users should be able to sign up for a new account.
   - [ ]  Boards and cards should be associated with a user.
     - [ ]  Anonymous cards or cards by guest users should still be allowed.
   - [ ] Add a new filter option on the home page to display only the current user's boards.
