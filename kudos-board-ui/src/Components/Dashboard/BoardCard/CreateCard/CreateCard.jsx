@@ -12,12 +12,6 @@ function CreateCard({ onClose, onAddCard }) {
   const [gifs, setGifs] = useState([]);
   const [clickedGifId, setClickedGifId] = useState(null);
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     onAddCard({ cardTitle, cardMessage, gifURL, searchGif, cardAuthor });
-//     onClose();
-//   };
-
 const handleSubmit = (e) => {
     e.preventDefault();
     const newCard = { title: cardTitle, message: cardMessage, gif_url: gifURL, author: cardAuthor };
@@ -135,3 +129,4 @@ const handleSubmit = (e) => {
 }
 
 export default CreateCard;
+
